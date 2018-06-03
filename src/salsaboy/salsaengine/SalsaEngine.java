@@ -129,7 +129,6 @@ package salsaboy.salsaengine;
  *</pre>
  */
 
-
 public class SalsaEngine {
     public static void main(String[] args) {
     }
