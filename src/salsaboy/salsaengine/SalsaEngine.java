@@ -1,5 +1,7 @@
 package salsaboy.salsaengine;
 
+import salsaboy.salsaengine.tools.ToolSelector;
+
 /**
  * <pre>
  *
@@ -131,5 +133,6 @@ package salsaboy.salsaengine;
 
 public class SalsaEngine {
     public static void main(String[] args) {
+        new ToolSelector();
     }
 }
