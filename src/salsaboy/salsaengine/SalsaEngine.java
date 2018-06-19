@@ -1,6 +1,7 @@
 package salsaboy.salsaengine;
 
 import salsaboy.salsaengine.tools.ToolSelector;
+import javax.swing.*;
 
 /**
  * <pre>
@@ -133,6 +134,15 @@ import salsaboy.salsaengine.tools.ToolSelector;
 
 public class SalsaEngine {
     public static void main(String[] args) {
+        if (System.getProperty("os.name").startsWith("mac")) {
+            try {
+                System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Salsa");
+                System.setProperty("apple.laf.useScreenMenuBar", "true");
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } catch (ClassNotFoundException | InstantiationException | UnsupportedLookAndFeelException | IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
         new ToolSelector();
     }
 }
