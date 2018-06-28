@@ -6,8 +6,8 @@ import java.net.URL;
 
 public class Image extends JLabel {
     private boolean isInPaint = false;
-    private Painting toPaint;
-    public void setPaint(Painting e) {
+    private CustomRenderer toPaint;
+    public void setPaint(CustomRenderer e) {
         toPaint = e;
     }
     @Override

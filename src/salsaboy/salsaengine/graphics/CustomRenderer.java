@@ -2,6 +2,6 @@ package salsaboy.salsaengine.graphics;
 
 import java.awt.*;
 
-public interface Painting {
+interface CustomRenderer {
     void paint(Graphics g);
 }
