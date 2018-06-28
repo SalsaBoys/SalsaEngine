@@ -2,6 +2,7 @@ package salsaboy.salsaengine.graphics;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 
 public class Image extends JLabel {
     private boolean isInPaint = false;
@@ -17,7 +18,10 @@ public class Image extends JLabel {
             super.paint(g);
         }
     }
-    public Image() {
     
+    public Image(URL location) {
+        ImageIcon icon = new ImageIcon(location);
+        
+        setIcon(icon);
     }
 }
