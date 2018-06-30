@@ -14,10 +14,18 @@ public class Splash {
             Engine.requirements.frame().setLayout(null);
             switch (splash.type) {
                 case CENTER:
+                    final int frameHeight = Engine.requirements.frame().getHeight();
+                    final int frameWidth = Engine.requirements.frame().getWidth();
+                    
+                    final int labelHeight = splash.label.getHeight();
+                    final int labelWidth = splash.label.getWidth();
+                    
+                    splash.label.setBounds(new Rectangle(new Point(
+                        (frameWidth / 2) - (labelWidth / 2),
+                        (frameHeight / 2) - (labelHeight / 2)
+                    ), splash.label.getSize()));
                     Engine.requirements.frame().add(splash.label);
-                    if (!(splash.label.getBounds().equals(Engine.requirements.frame().getBounds()))) {
-                        splash.label.setBounds(new Rectangle(new Point(), new Dimension()));
-                    }
+                    
                     break;
                 default:
                     System.out.println("Feature " + splash.type.toString() + " is not ready for use");
