@@ -1,6 +1,7 @@
 package salsaboy.salsaengine;
 
 import salsaboy.salsaengine.gameplay.GameType;
+import salsaboy.salsaengine.splash.Splash;
 import javax.swing.*;
 
 public interface Initializer {
@@ -10,14 +11,25 @@ public interface Initializer {
      * @return the type
      */
     GameType gameType();
-    
+    /**
+     * The frame which the game will be in
+     * @return
+     */
     JFrame frame();
     
-        //Splash info
+        //Menu info
     /**
-     * This is to tell if the Engine should go with the default start.
+     * This is to tell if the Engine should go with the default menu.
      * This doesn't include the splash, that's compulsory.
      * @return If the game wants the default start.
      */
     boolean defaultStart();
+    
+        //Splash info
+    /**
+     * Gets the splash at a specific location. These will be followed by the Salsa Engine splash.
+     * @param location The location in the order of splashes.
+     * @return
+     */
+    Splash splashAt(int location);
 }

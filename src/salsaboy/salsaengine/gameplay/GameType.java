@@ -1,5 +1,12 @@
 package salsaboy.salsaengine.gameplay;
 
+/**
+ * This enum could be better described as Physics type.
+ */
 public enum GameType {
-    PLATFORMER
+    PLATFORMER,
+    /**
+     * This is for games with no physics
+     */
+    OTHER
 }
