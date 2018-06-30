@@ -9,5 +9,9 @@ public class Engine {
      */
     public static void start(Initializer initializer) {
         requirements = initializer;
+        
+        if (requirements.defaultStart()) {
+        
+        }
     }
 }
