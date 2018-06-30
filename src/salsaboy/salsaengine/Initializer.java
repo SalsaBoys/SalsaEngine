@@ -29,7 +29,7 @@ public interface Initializer {
     /**
      * Gets the splash at a specific location. These will be followed by the Salsa Engine splash.
      * @param location The location in the order of splashes.
-     * @return
+     * @return The splash at that moment
      */
     Splash splashAt(int location);
 }

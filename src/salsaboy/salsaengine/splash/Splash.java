@@ -3,6 +3,7 @@ package salsaboy.salsaengine.splash;
 import salsaboy.salsaengine.Engine;
 import salsaboy.salsaengine.misc.Timer;
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Splash {
@@ -10,9 +11,13 @@ public class Splash {
     public static void run() {
         for (Splash splash : splashes) {
             Engine.requirements.frame().getContentPane().removeAll();
+            Engine.requirements.frame().setLayout(null);
             switch (splash.type) {
                 case CENTER:
                     Engine.requirements.frame().add(splash.label);
+                    if (!(splash.label.getBounds().equals(Engine.requirements.frame().getBounds()))) {
+                        splash.label.setBounds(new Rectangle(new Point(), new Dimension()));
+                    }
                     break;
                 default:
                     System.out.println("Feature " + splash.type.toString() + " is not ready for use");
