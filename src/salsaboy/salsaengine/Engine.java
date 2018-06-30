@@ -17,9 +17,7 @@ public class Engine {
         //Engine splash
         new Splash(new Image(Splash.class.getResource("EngineSplashTemp.png")), 2000, SplashType.CENTER);
         
-        if (requirements.defaultStart()) {
         
-        }
         
         Splash.run();
     }
