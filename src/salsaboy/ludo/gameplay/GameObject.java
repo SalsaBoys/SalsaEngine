@@ -7,7 +7,8 @@ public class GameObject {
 	 * So we can tell which physics system to use
 	 */
 	static GameType type = Engine.type;
-	int x, y, z; //Z can be render order for now
+	int x, y, z;
+	
 
 	public GameObject(int x, int y, int z) {
 		this.x = x;
