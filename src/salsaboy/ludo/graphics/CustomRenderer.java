@@ -1,4 +1,4 @@
-package salsaboy.salsaengine.graphics;
+package salsaboy.ludo.graphics;
 
 import java.awt.*;
 

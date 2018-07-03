@@ -1,4 +1,4 @@
-package salsaboy.salsaengine.gameplay;
+package salsaboy.ludo.gameplay;
 
 /**
  * This enum could be better described as Physics type.

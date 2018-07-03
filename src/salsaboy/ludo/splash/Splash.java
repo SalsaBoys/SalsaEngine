@@ -1,7 +1,8 @@
-package salsaboy.salsaengine.splash;
+package salsaboy.ludo.splash;
 
-import salsaboy.salsaengine.Engine;
-import salsaboy.salsaengine.misc.Timer;
+import salsaboy.ludo.Engine;
+import salsaboy.ludo.graphics.FilledRectangle;
+import salsaboy.ludo.misc.Timer;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -10,27 +11,29 @@ public class Splash {
     private static ArrayList<Splash> splashes = new ArrayList<>();
     public static void run() {
         for (Splash splash : splashes) {
-            Engine.requirements.frame().getContentPane().removeAll();
-            Engine.requirements.frame().setLayout(null);
+            Engine.frame.getContentPane().removeAll();
+            Engine.frame.setLayout(null);
+            Engine.frame.add(new FilledRectangle(Engine.frame.getPreferredSize())); //TODO FIX
             switch (splash.type) {
                 case CENTER:
-                    final int frameHeight = Engine.requirements.frame().getHeight();
-                    final int frameWidth = Engine.requirements.frame().getWidth();
+                    final int frameHeight = Engine.frame.getHeight();
+                    final int frameWidth = Engine.frame.getWidth();
                     
-                    final int labelHeight = splash.label.getHeight();
-                    final int labelWidth = splash.label.getWidth();
+                    final int labelHeight = splash.label.getPreferredSize().height;
+                    final int labelWidth = splash.label.getPreferredSize().width;
                     
                     splash.label.setBounds(new Rectangle(new Point(
                         (frameWidth / 2) - (labelWidth / 2),
                         (frameHeight / 2) - (labelHeight / 2)
                     ), splash.label.getSize()));
-                    Engine.requirements.frame().add(splash.label);
+                    Engine.frame.add(splash.label);
                     
                     break;
                 default:
                     System.out.println("Feature " + splash.type.toString() + " is not ready for use");
                     break;
             }
+            Engine.frame.repaint();
             new Timer(splash.delay);
         }
     }

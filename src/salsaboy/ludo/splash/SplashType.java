@@ -1,4 +1,4 @@
-package salsaboy.salsaengine.splash;
+package salsaboy.ludo.splash;
 
 public enum SplashType {
     CENTER,

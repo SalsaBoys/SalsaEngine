@@ -1,4 +1,4 @@
-package salsaboy.salsaengine.misc;
+package salsaboy.ludo.misc;
 
 import java.util.concurrent.TimeUnit;
 

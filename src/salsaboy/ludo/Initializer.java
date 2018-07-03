@@ -1,8 +1,9 @@
-package salsaboy.salsaengine;
+package salsaboy.ludo;
 
-import salsaboy.salsaengine.gameplay.GameType;
-import salsaboy.salsaengine.splash.Splash;
+import salsaboy.ludo.gameplay.GameType;
+import salsaboy.ludo.splash.Splash;
 import javax.swing.*;
+import java.awt.*;
 
 public interface Initializer {
         //Game play info
@@ -23,4 +24,9 @@ public interface Initializer {
      * @return The splash at that moment
      */
     Splash[] splashes();
+    /**
+     * The colour of the splash background
+     * @return The colour to use
+     */
+    Color splashBackgroundColour();
 }
