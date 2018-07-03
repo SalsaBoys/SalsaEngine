@@ -17,10 +17,13 @@ public class FilledRectangle extends JLabel {
         
         setBounds(x, y, width, height);
     }
-    public FilledRectangle(Rectangle rectangle) {
-        this.x = rectangle.getX();
-        this.y = rectangle.getY();
-        this.height = rectangle.getHeight();
-        this.width = rectangle.getWidth();
+    public FilledRectangle(java.awt.Rectangle rectangle) {
+        this.x = (int) rectangle.getX();
+        this.y = (int) rectangle.getY();
+        this.height = (int) rectangle.getHeight();
+        this.width = (int) rectangle.getWidth();
+    }
+    public FilledRectangle(Dimension dimension) {
+        this(new java.awt.Rectangle(new Point(0, 0), dimension));
     }
 }
