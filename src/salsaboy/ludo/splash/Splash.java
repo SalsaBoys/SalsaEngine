@@ -13,7 +13,7 @@ public class Splash {
         for (Splash splash : splashes) {
             Engine.frame.getContentPane().removeAll();
             Engine.frame.setLayout(null);
-            Engine.frame.add(new FilledRectangle(Engine.frame.getPreferredSize())); //TODO FIX
+            Engine.frame.add(new FilledRectangle(Engine.frame.getPreferredSize()));
             switch (splash.type) {
                 case CENTER:
                     final int frameHeight = Engine.frame.getHeight();
@@ -38,9 +38,9 @@ public class Splash {
         }
     }
     
-    private long delay;
-    private JLabel label;
-    private SplashType type;
+    public long delay;
+    public JLabel label;
+    public SplashType type;
     public Splash(JLabel display, long milliseconds, SplashType type) {
         splashes.add(this);
         

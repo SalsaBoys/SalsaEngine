@@ -24,6 +24,11 @@ public class Engine {
         //Engine splash
         new Splash(new Image(Splash.class.getResource("EngineSplashTemp.png")), 2000, SplashType.CENTER);
         
+        //Other splashes
+        for (Splash splash : initializer.splashes()) {
+            new Splash(splash.label, splash.delay, splash.type);
+        }
+        
         Splash.run();
     }
 }
