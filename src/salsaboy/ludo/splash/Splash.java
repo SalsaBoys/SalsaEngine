@@ -1,7 +1,6 @@
 package salsaboy.ludo.splash;
 
 import salsaboy.ludo.Engine;
-import salsaboy.ludo.graphics.FilledRectangle;
 import salsaboy.ludo.misc.Timer;
 import javax.swing.*;
 import java.awt.*;
@@ -10,10 +9,10 @@ import java.util.ArrayList;
 public class Splash {
     private static ArrayList<Splash> splashes = new ArrayList<>();
     public static void run() {
+        Engine.frame.getContentPane().setBackground(Engine.splashBack);
         for (Splash splash : splashes) {
             Engine.frame.getContentPane().removeAll();
             Engine.frame.setLayout(null);
-            Engine.frame.add(new FilledRectangle(Engine.frame.getPreferredSize()));
             switch (splash.type) {
                 case CENTER:
                     final int frameHeight = Engine.frame.getHeight();

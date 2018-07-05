@@ -2,14 +2,14 @@ package salsaboy.ludo;
 
 import salsaboy.ludo.gameplay.GameType;
 import salsaboy.ludo.graphics.Image;
+import salsaboy.ludo.graphics.Window;
 import salsaboy.ludo.menu.Menu;
 import salsaboy.ludo.splash.Splash;
 import salsaboy.ludo.splash.SplashType;
-import javax.swing.*;
 import java.awt.*;
 
 public class Engine {
-    public static JFrame frame;
+    public static Window frame;
     public static GameType type;
     public static Color splashBack;
     public static String gameName;

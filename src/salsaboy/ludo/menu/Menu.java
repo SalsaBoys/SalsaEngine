@@ -11,5 +11,11 @@ public class Menu extends JPanel {
     }
     public Menu() {
         Engine.frame.getContentPane().removeAll();
+        
+        for (JLabel label : options) {
+            add(label);
+        }
+        
+        Engine.frame.add(this);
     }
 }
