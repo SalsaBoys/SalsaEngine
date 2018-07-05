@@ -20,6 +20,7 @@ public class Window extends JFrame {
     public Component add(Component comp) {
         super.add(comp);
         repaint();
+        setVisible(true);
         return comp;
     }
 }
