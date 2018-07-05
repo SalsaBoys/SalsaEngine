@@ -2,6 +2,7 @@ package salsaboy.ludo;
 
 import salsaboy.ludo.gameplay.GameType;
 import salsaboy.ludo.graphics.Image;
+import salsaboy.ludo.menu.Menu;
 import salsaboy.ludo.splash.Splash;
 import salsaboy.ludo.splash.SplashType;
 import javax.swing.*;
@@ -11,6 +12,7 @@ public class Engine {
     public static JFrame frame;
     public static GameType type;
     public static Color splashBack;
+    public static String gameName;
     
     /**
      * This must run before anything else.
@@ -20,6 +22,7 @@ public class Engine {
         frame = initializer.frame();
         type = initializer.gameType();
         splashBack = initializer.splashBackgroundColour();
+        gameName = initializer.gameName();
         
         //Engine splash
         new Splash(new Image(Splash.class.getResource("EngineSplashTemp.png")), 2000, SplashType.CENTER);
@@ -30,5 +33,9 @@ public class Engine {
         }
         
         Splash.run();
+        
+        //Main menu
+        frame.getContentPane().removeAll();
+        frame.add(new Menu());
     }
 }

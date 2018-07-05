@@ -29,4 +29,7 @@ public interface Initializer {
      * @return The colour to use
      */
     Color splashBackgroundColour();
+    
+        //Misc info
+    String gameName();
 }
