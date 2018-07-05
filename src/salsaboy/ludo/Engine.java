@@ -25,7 +25,7 @@ public class Engine {
         gameName = initializer.gameName();
         
         //Engine splash
-        new Splash(new Image(Splash.class.getResource("EngineSplashTemp.png")), 2000, SplashType.CENTER);
+        new Splash(new Image(Splash.class.getResource("EngineSplash.png")), 2000, SplashType.CENTER);
         
         //Other splashes
         for (Splash splash : initializer.splashes()) {
