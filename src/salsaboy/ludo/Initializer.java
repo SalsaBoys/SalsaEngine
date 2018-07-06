@@ -1,6 +1,7 @@
 package salsaboy.ludo;
 
 import salsaboy.ludo.gameplay.GameType;
+import salsaboy.ludo.graphics.Image;
 import salsaboy.ludo.splash.Splash;
 import salsaboy.ludo.graphics.Window;
 import java.awt.*;
@@ -29,6 +30,9 @@ public interface Initializer {
      * @return The colour to use
      */
     Color splashBackgroundColour();
+    
+        //Menu info
+    Image menuBackground();
     
         //Misc info
     String gameName();
