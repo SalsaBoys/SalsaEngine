@@ -18,13 +18,6 @@ public class Menu {
         Engine.frame.getContentPane().removeAll();
         Engine.frame.setLayout(null);
     
-        try {
-            background.setBounds(new Rectangle(new Point(0, 0), new Dimension(background.getPreferredSize())));
-            Engine.frame.add(background);
-        } catch (NullPointerException e) {
-            //Don't need anything here
-        }
-    
         int current = 0;
         for (JLabel label : toAdd) {
             if (current == 0) {
@@ -35,6 +28,13 @@ public class Menu {
                 current += label.getHeight() - 10;
             }
             Engine.frame.add(label);
+        }
+    
+        try {
+            background.setBounds(new Rectangle(new Point(0, 0), new Dimension(background.getPreferredSize())));
+            Engine.frame.add(background);
+        } catch (NullPointerException e) {
+            //Don't need anything here
         }
     }
 }
