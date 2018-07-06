@@ -10,10 +10,13 @@ import java.util.ArrayList;
 
 public class Menu {
     static ArrayList<JLabel> options = new ArrayList<>();
-    static {
-        options.add(new MenuItem(Engine.gameName, null).makeTitle());
-    }
     public Menu(Image background) {
+        ArrayList<JLabel> toAdd = new ArrayList<>();
+        toAdd.add(new MenuItem(Engine.gameName, null).makeTitle());
+        for (JLabel label : options) {
+            toAdd.add(label);
+        }
+        
         Engine.frame.getContentPane().removeAll();
         Engine.frame.setLayout(null);
     
@@ -25,7 +28,7 @@ public class Menu {
         }
     
         int current = 0;
-        for (JLabel label : options) {
+        for (JLabel label : toAdd) {
             if (current == 0) {
                 label.setBounds(new Rectangle(new Point(10, 50), label.getPreferredSize()));
                 current += 50;
@@ -33,7 +36,6 @@ public class Menu {
                 label.setBounds(new Rectangle(new Point(10, 50 + current), label.getPreferredSize()));
                 current += label.getHeight();
             }
-            System.out.println(current);
             Engine.frame.add(label);
         }
     }

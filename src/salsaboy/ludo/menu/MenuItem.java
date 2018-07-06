@@ -12,6 +12,7 @@ public class MenuItem extends JLabel {
     private boolean isTitle = false;
     
     MenuItem makeTitle() {
+        Menu.options.remove(this);
         setFont(optionFont.deriveFont(48f));
         isTitle = true;
         return this;
