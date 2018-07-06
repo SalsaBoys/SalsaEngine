@@ -31,10 +31,10 @@ public class Menu {
         for (JLabel label : toAdd) {
             if (current == 0) {
                 label.setBounds(new Rectangle(new Point(10, 50), label.getPreferredSize()));
-                current += 50;
+                current += 60;
             } else {
                 label.setBounds(new Rectangle(new Point(10, 50 + current), label.getPreferredSize()));
-                current += label.getHeight();
+                current += label.getHeight() - 10;
             }
             Engine.frame.add(label);
         }
