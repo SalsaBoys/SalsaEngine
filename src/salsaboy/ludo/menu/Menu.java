@@ -9,7 +9,7 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 public class Menu {
-    static ArrayList<JLabel> options = new ArrayList<>(4);
+    static ArrayList<JLabel> options = new ArrayList<>();
     static {
         options.add(new MenuItem(Engine.gameName, null).makeTitle());
     }
@@ -28,11 +28,12 @@ public class Menu {
         for (JLabel label : options) {
             if (current == 0) {
                 label.setBounds(new Rectangle(new Point(10, 50), label.getPreferredSize()));
-                current += 30;
+                current += 50;
             } else {
                 label.setBounds(new Rectangle(new Point(10, 50 + current), label.getPreferredSize()));
                 current += label.getHeight();
             }
+            System.out.println(current);
             Engine.frame.add(label);
         }
     }
