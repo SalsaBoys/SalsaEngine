@@ -36,6 +36,6 @@ public class Engine {
         
         //Main menu
         frame.getContentPane().removeAll();
-        frame.add(new Menu());
+        new Menu(initializer.menuBackground());
     }
 }

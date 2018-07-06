@@ -9,9 +9,11 @@ import java.awt.event.MouseListener;
 
 public class MenuItem extends JLabel {
     private static final Font optionFont = new Font("Avenir Next Condensed", Font.PLAIN, 24);
+    private boolean isTitle = false;
     
     MenuItem makeTitle() {
         setFont(optionFont.deriveFont(48f));
+        isTitle = true;
         return this;
     }
     
@@ -19,7 +21,13 @@ public class MenuItem extends JLabel {
     private MouseListener listener = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
-            onClick.method();
+            try {
+                onClick.method();
+            } catch (NullPointerException e1) {
+                if (!isTitle) {
+                    e1.printStackTrace();
+                }
+            }
         }
     
         @Override
@@ -34,7 +42,9 @@ public class MenuItem extends JLabel {
     
         @Override
         public void mouseEntered(MouseEvent e) {
-            setForeground(Color.GRAY);
+            if (!isTitle) {
+                setForeground(Color.GRAY);
+            }
         }
     
         @Override
@@ -51,9 +61,7 @@ public class MenuItem extends JLabel {
             onClick = action;
             addMouseListener(listener);
         } catch (NullPointerException e) {
-            if (getMouseListeners().length > 0) {
-                removeMouseListener(listener);
-            }
+            removeMouseListener(listener);
         }
         
         Menu.options.add(this);
