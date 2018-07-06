@@ -13,9 +13,7 @@ public class Menu {
     public Menu(Image background) {
         ArrayList<JLabel> toAdd = new ArrayList<>();
         toAdd.add(new MenuItem(Engine.gameName, null).makeTitle());
-        for (JLabel label : options) {
-            toAdd.add(label);
-        }
+        toAdd.addAll(options);
         
         Engine.frame.getContentPane().removeAll();
         Engine.frame.setLayout(null);
